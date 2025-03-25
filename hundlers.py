@@ -12,7 +12,7 @@ router = Router(name=__name__)
 @router.message(CommandStart())
 async def comand_start(mes: Message):
     await mes.answer_photo("https://i.etsystatic.com/21914118/r/il/c349cb/5618266017/il_794xN.5618266017_41ha.jpg",
-                           caption='Добро пожаловать тут вы можите крутить кубики!', reply_markup=kb.main)
+                           caption='Добро пожаловать тут вы можите кидать кубики!', reply_markup=kb.main)
 
 
 @router.message(F.text.startswith('d'))
@@ -38,7 +38,7 @@ async def rolldice(mes: Message):
         await mes.answer(text)
 
     except ValueError:
-        await mes.answer("Ошибка! Используйте команду в формате dX, где X — количество граней кубика.")
+        await mes.answer("Ошибка!   'Напишите фразу в формате dX, где X — количество граней кубика.")
 
 
 @router.message(F.text == 'свое значение')
